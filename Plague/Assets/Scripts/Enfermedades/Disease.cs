@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Disease : MonoBehaviour {
 
     protected float onSet;
+    protected float inicialOnSet;
     protected float timeUntilDeath;
     [SerializeField]
     protected bool contagiado = false;
@@ -26,6 +27,18 @@ public abstract class Disease : MonoBehaviour {
         set
         {
             onSet = value;
+        }
+    }
+    public float InicialOnSet
+    {
+        get
+        {
+            return inicialOnSet;
+        }
+
+        set
+        {
+            inicialOnSet = value;
         }
     }
     public float TimeUntilDeath
@@ -64,15 +77,31 @@ public abstract class Disease : MonoBehaviour {
             manifestacion = value;
         }
     }
+    public bool Manifestado
+    {
+        get
+        {
+            return manifestado;
+        }
 
+        set
+        {
+            manifestado = value;
+        }
+    }
 
-	// Update is called once per frame
-	protected void Update () {
+    protected virtual void Start()
+    {
+        inicialOnSet = OnSet;
+    }
+
+    // Update is called once per frame
+    protected void Update () {
         if (manifestacion)
-            if (manifestado == false)
+            if (Manifestado == false)
             {
                 ManifestarSintomas();
-                manifestado = true;
+                Manifestado = true;
             }
 	}
 

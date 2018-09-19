@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class VirusA : Disease {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    protected override void Start () {
         onSet = 20;
         timeUntilDeath = 50;
+        base.Start();
     }
 
 

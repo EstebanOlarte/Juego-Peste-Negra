@@ -62,13 +62,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Actor.cs" />
-    <Compile Include="Assets\Scripts\Denizen.cs" />
     <Compile Include="Assets\Scripts\Enfermedades\BlackDeath.cs" />
     <Compile Include="Assets\Scripts\Enfermedades\Disease.cs" />
     <Compile Include="Assets\Scripts\Enfermedades\VirusA.cs" />
     <Compile Include="Assets\Scripts\Enfermedades\VirusS.cs" />
-    <Compile Include="Assets\Scripts\IA\IA.cs" />
+    <Compile Include="Assets\Scripts\IA\Denizen.cs" />
+    <Compile Include="Assets\Scripts\IA\Grudger.cs" />
+    <Compile Include="Assets\Scripts\IA\Survivor.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Vaccine.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/GitHub/Juego-Peste-Negra/Plague/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

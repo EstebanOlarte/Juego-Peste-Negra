@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BlackDeath : Disease {
 
-    int counter = 1;
+    public int counter = 1;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    protected override void Start () {
         onSet = 8;
         timeUntilDeath = 30;
+        base.Start();
     }
 
     protected override void ManifestarSintomas()

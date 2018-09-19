@@ -5,9 +5,10 @@ using UnityEngine;
 public class VirusS : Disease {
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
         onSet = 40;
         timeUntilDeath = 40;
+        base.Start();
     }
 
     protected override void ManifestarSintomas()

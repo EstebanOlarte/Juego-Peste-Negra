@@ -14,9 +14,11 @@ public class Player : Actor {
 
         for (int i = 0; i < textVirus.Length; i++)
         {
-            texts[i].text = textVirus[i] + " = " + Mathf.Clamp(  (float)decimal.Round( (decimal)((tiempoContagiado[i] * 100) / enfermedades[i].OnSet) , 2 )   , 0 ,100) + "%";
-        }
+            //texts[i].text = textVirus[i] + " = " + Mathf.Clamp(Mathf.Round((tiempoContagiado[i] * 100F) / enfermedades[i].OnSet), 0.1f, 100f);
+            //texts[i].text = textVirus[i] + " = " + Mathf.Clamp(Mathf.Round((tiempoContagiado[i] * 100F) / enfermedades[i].OnSet), 0.1f, 100f);
+            texts[i].text = textVirus[i] + " = " + Mathf.Clamp( (float)decimal.Round( (decimal)((tiempoContagiado[i])*100 / enfermedades[i].OnSet) ,2 )  ,0,100 ) + "%";
     }
+}
 
     protected override void Movimiento()
     {
