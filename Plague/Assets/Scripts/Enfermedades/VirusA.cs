@@ -15,6 +15,6 @@ public class VirusA : Disease {
     protected override void ManifestarSintomas()
     {
         speedModifier = 0.9f;
-        GetComponent<SpriteRenderer>().color -= new Color(0.5f,0,0,0);
+        //GetComponent<SpriteRenderer>().color -= new Color(0.5f,0,0,0);
     }
 }

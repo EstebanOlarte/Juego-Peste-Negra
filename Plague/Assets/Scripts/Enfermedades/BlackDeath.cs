@@ -14,8 +14,7 @@ public class BlackDeath : Disease {
     }
 
     protected override void ManifestarSintomas()
-    {
-        GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0.5f,0);
+    { 
         speedModifier = 1 - (0.05f * counter);
         InvokeRepeating("Stun", 10, 10);
         InvokeRepeating("Increase", 4, 4);
@@ -26,7 +25,9 @@ public class BlackDeath : Disease {
         int r = 0;
         r = Random.Range(1, 101);
         if (r <= 15)
+        {
             StartCoroutine(WaitToMove());
+        }
     }
 
     void Increase()
@@ -39,8 +40,10 @@ public class BlackDeath : Disease {
 
     IEnumerator WaitToMove()
     {
+        anim.SetBool("Stun", true);
         speedModifier = 0;
         yield return new WaitForSeconds(3);
         speedModifier = 1 - (0.05f * counter);
+        anim.SetBool("Stun", false);
     }
 }

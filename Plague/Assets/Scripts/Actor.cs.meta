@@ -3,7 +3,8 @@ guid: d33cded8df2e65d47b2923ce3f0e768d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - vacunaSound: {fileID: 8300000, guid: 8b4ca187b61b1a5458d3963ff8cfd6a1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

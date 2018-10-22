@@ -12,8 +12,7 @@ public class VirusS : Disease {
     }
 
     protected override void ManifestarSintomas()
-    {
-        GetComponent<SpriteRenderer>().color -= new Color(0, 0.5f, 0 , 0);
+    { 
         speedModifier = 0.8f;
         InvokeRepeating("Stun" , 10 , 10);
     }
@@ -22,14 +21,16 @@ public class VirusS : Disease {
     {
         int r = 0;
         r = Random.Range( 1 , 101 );
-        if (r <= 5)
+        if (r <= 50)
             StartCoroutine(WaitToMove());
     }
 
     IEnumerator WaitToMove()
     {
+        anim.SetBool("Stun", true);
         speedModifier = 0;
         yield return new WaitForSeconds(2);
         speedModifier = 0.8f;
+        anim.SetBool("Stun", false);
     }
 }

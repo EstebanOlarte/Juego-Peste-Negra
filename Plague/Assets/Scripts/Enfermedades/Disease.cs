@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public abstract class Disease : MonoBehaviour {
 
@@ -12,9 +13,8 @@ public abstract class Disease : MonoBehaviour {
     [SerializeField]
     protected bool manifestacion = false;
     protected bool manifestado;
-
     public float speedModifier = 1;
-
+    protected Animator anim;
 
     //Getters
     public float OnSet
@@ -92,6 +92,7 @@ public abstract class Disease : MonoBehaviour {
 
     protected virtual void Start()
     {
+        anim = GetComponent<Animator>();
         inicialOnSet = OnSet;
     }
 
